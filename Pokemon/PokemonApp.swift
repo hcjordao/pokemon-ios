@@ -1,17 +1,15 @@
-//
-//  PokemonApp.swift
-//  Pokemon
-//
-//  Created by Henrique Capelatto Jordão on 25/08/22.
-//
-
+import Main
 import SwiftUI
 
 @main
 struct PokemonApp: App {
+    var appInit: AppInit {
+        AppInit()
+    }
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            AppMainView(main: appInit)
         }
     }
 }
