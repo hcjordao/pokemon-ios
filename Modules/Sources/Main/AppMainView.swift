@@ -1,10 +1,10 @@
 import SwiftUI
 
 public struct AppMainView: View {
-    let main: AppInit
+    let app: AppInit
 
-    public init(main: AppInit) {
-        self.main = main
+    public init(app: AppInit) {
+        self.app = app
     }
 
     public var body: some View {
@@ -15,9 +15,9 @@ public struct AppMainView: View {
 #if DEBUG
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
-        let main = AppInit()
+        let app = AppInit()
 
-        return AppMainView(main: main)
+        return AppMainView(app: app)
     }
 }
 #endif
