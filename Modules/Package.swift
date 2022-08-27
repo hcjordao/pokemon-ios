@@ -32,7 +32,13 @@ let package = Package(
             ]
         ),
     ],
-    dependencies: [],
+    dependencies: [
+        .package(
+            name: "UIColorHexSwift",
+            url: "https://github.com/yeahdongcn/UIColor-Hex-Swift",
+            from: "5.1.1"
+        ),
+    ],
     targets: [
         // MARK: Root Elements
         .target(
@@ -87,7 +93,9 @@ let package = Package(
         // MARK: Core UI
         .target(
             name: "CoreUI",
-            dependencies: []
+            dependencies: [
+                "UIColorHexSwift"
+            ]
         ),
         .testTarget(
             name: "CoreUITests",
@@ -97,7 +105,9 @@ let package = Package(
         // MARK: Feature Home
         .target(
             name: "FeatureHome",
-            dependencies: []
+            dependencies: [
+                "CoreUI"
+            ]
         ),
         .testTarget(
             name: "FeatureHomeTests",
@@ -117,7 +127,9 @@ let package = Package(
         // MARK: Application
         .target(
             name: "Main",
-            dependencies: []
+            dependencies: [
+                "FeatureHome"
+            ]
         ),
         .testTarget(
             name: "MainTests",
